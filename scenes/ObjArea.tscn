@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dqkrij7o3lymn"]
+
+[ext_resource type="Script" uid="uid://cb4bci4y63si3" path="res://scenes/ObjArea.gd" id="1_xk14b"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_svgfe"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_16jvy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vq33j"]
+transparency = 1
+albedo_color = Color(0.6344381, 0.6344381, 0.6344381, 0)
+
+[node name="ObjArea" type="Area3D" unique_id=1860931396]
+script = ExtResource("1_xk14b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1908090759]
+shape = SubResource("SphereShape3D_svgfe")
+debug_color = Color(0, 0.6, 0.69803923, 0.5058824)
+debug_fill = false
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1747776629]
+mesh = SubResource("CapsuleMesh_16jvy")
+material = SubResource("StandardMaterial3D_vq33j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

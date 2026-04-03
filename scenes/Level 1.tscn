@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://3bj4q2hq3e2l"]
+
+[ext_resource type="PackedScene" uid="uid://dltqory4o1xju" path="res://scenes/World 1.tscn" id="1_ymo8b"]
+[ext_resource type="PackedScene" uid="uid://ca8e755efj8s0" path="res://scenes/Player.tscn" id="2_gpsl1"]
+[ext_resource type="PackedScene" uid="uid://dqkrij7o3lymn" path="res://scenes/ObjArea.tscn" id="3_gpsl1"]
+[ext_resource type="PackedScene" uid="uid://bvhovso4sifyw" path="res://scenes/Coin.tscn" id="4_kbmnf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kbmnf"]
+transparency = 1
+albedo_color = Color(0, 0.83137256, 0, 0.6862745)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8iqp6"]
+material = SubResource("StandardMaterial3D_kbmnf")
+
+[node name="Level1" type="Node3D" unique_id=118558474]
+
+[node name="World 1" parent="." unique_id=1150804980 instance=ExtResource("1_ymo8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0579834, -0.14764404, 0.0053100586)
+
+[node name="Player" parent="." unique_id=1494432846 instance=ExtResource("2_gpsl1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="ObjArea" parent="." unique_id=1860931396 instance=ExtResource("3_gpsl1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.0187268, 38.605988)
+sceneName = "WinScreen"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjArea" unique_id=200033451]
+mesh = SubResource("CapsuleMesh_8iqp6")
+
+[node name="ObjArea2" parent="." unique_id=1208639343 instance=ExtResource("3_gpsl1")]
+transform = Transform3D(15, 0, 0, 0, -1.7484555e-07, -1, 0, 4, -4.371139e-08, 0.09157753, -7.8410215, 20.50596)
+
+[node name="Coin" parent="." unique_id=1682240270 instance=ExtResource("4_kbmnf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.0935585, 4.587695)
+
+[node name="Coin2" parent="." unique_id=268498801 instance=ExtResource("4_kbmnf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.0935585, -11.879018)
+
+[node name="Coin3" parent="." unique_id=1808311850 instance=ExtResource("4_kbmnf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.268045, -2.0935585, -11.879018)
+
+[node name="Coin4" parent="." unique_id=541453030 instance=ExtResource("4_kbmnf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.268045, -2.0935585, -6.5099816)
+
+[node name="Coin5" parent="." unique_id=1330369251 instance=ExtResource("4_kbmnf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8920593, -2.0935585, -6.5099816)
+
+[node name="Coin6" parent="." unique_id=761026261 instance=ExtResource("4_kbmnf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8920593, -2.0935585, -34.205772)
